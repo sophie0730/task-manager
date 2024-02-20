@@ -5,7 +5,7 @@ const router = Router();
 
 router.route('/tasks')
         .get(tasks.getAllTasks)
-        .post(tasks.addTasks);
+        .post(tasks.createTask);
 
 router.route('/tasks/:id')
         .get(tasks.getTask)

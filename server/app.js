@@ -5,13 +5,10 @@ import * as mongoConnect from './utils/db.js';
 const app = express();
 
 //middleware
+app.use(express.static('./view'));
 app.use(express.json());
 
 //routes
-app.get('/hello', (req, res) => {
-  res.send('Task Manager App');
-})
-
 app.use('/api/v1', taskRouter);
 
 const port = 3000
