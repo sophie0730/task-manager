@@ -1,5 +1,7 @@
 import express from 'express';
-import * as tasksRouter from '../router/tasks.js'
+import taskRouter from './routes/tasks.js'
+import * as mongoConnect from './utils/db.js';
+
 const app = express();
 
 //middleware
@@ -10,7 +12,7 @@ app.get('/hello', (req, res) => {
   res.send('Task Manager App');
 })
 
-app.use('/api/v1', tasksRouter);
+app.use('/api/v1', taskRouter);
 
 const port = 3000
 app.listen(port, console.log(`server is listening on port ${port}`));
